@@ -1,7 +1,7 @@
 function bubbleSort(collection) {
   let len = collection.length;
   let sorted = collection;
-  let newCollection;
+  let unsorted;
   if (len === 0) {
     return [];
   } else if (len < 2) {
@@ -14,8 +14,8 @@ function bubbleSort(collection) {
       sorted = swap(collection, i, next);
     }
   }
-  newCollection = sorted.slice(0, -1);
-  return bubbleSort(newCollection).concat(sorted.slice(-1));
+  unsorted = sorted.slice(0, -1);
+  return bubbleSort(unsorted).concat(sorted.slice(-1));
 }
 
 function swap(collection, index1, index2) {
